@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adisyo</title>
+
+    <style>
+        .copy-button {
+            display: block;
+            width: 150px;
+            height: 55px;
+            background-color: rgb(189, 48, 48);
+            color: white;
+            border: 2px solid white;
+            border-radius: 10px;
+            font-size: 16px;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+
+        .copy-button:active {
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body style="background-color: #282731;color: white;font-family: Arial, Helvetica, sans-serif;">
+    <script src="./script.js"></script>
+
+    <div style="margin-left: 20px; margin-bottom: 100px;">
+        <h2>1. Adım: Outlook adresine giriş yapın</h2>
+        <h4><a href="https://outlook.office.com/mail" style="color: white;">https://outlook.office.com/mail</a></h4>
+
+        <hr>
+
+        <h2>2. Adım: Outlook ayarlar ekranını açın</h2>
+        <div>
+            <h4 style="margin-bottom: 15px;">
+                Sağ üst köşede bulunan resimdeki işaretli buton
+            </h4>
+            <img src="./settings-1.png" alt="" width="1000" />
+        </div>
+
+        <hr>
+
+        <h2>3. Adım: Hesap>İmzalar sekmesini açın</h2>
+        <div>
+            <h4 style="margin-bottom: 15px;">
+                Yeni imza butonuna tıklayın ve altında bulunan "İmza adını düzenleyin" alanına imzanızın ismini girin.
+                Örn: Adisyo İmza
+            </h4>
+            <img src="./settings-2.png" alt="" width="1000" />
+        </div>
+
+        <hr>
+
+        <h2>4. Adım: İmza seçiminizi yapın</h2>
+        <div>
+            <h4 style="margin-bottom: 15px;">
+                &nbsp;- Eğer imzanızda telefon numarası alanının görünmesini <b
+                    style="color: rgb(255, 104, 3);">İSTİYORSANIZ</b> alttaki "Kopyala" butonu ile imzayı
+                kopyalayın ve 5. adıma geçin.
+            </h4>
+
+            <iframe id="signature" width="10px" height="10px" style="border: 0" allowfullscreen="" loading="lazy"
+                scrolling="no" onload="resizeIframe(this)"></iframe>
+
+            <div style="display: flex; align-items: center; gap: 20px;">
+                <button class="copy-button" id="copyButton">Kopyala</button>
+
+                <span style="color: rgb(38, 241, 38); font-size: 18px;display: none;" id="copyButtonMessage">Kopyalandı!</span>
+            </div>
+
+            <hr style="max-width: 500px; margin-left: 0; margin-top: 25px;">
+
+            <h4 style="margin-bottom: 15px;">
+                &nbsp;- Eğer imzanızda telefon numarası alanının görünmesini <b
+                    style="color: rgb(255, 104, 3);">İSTEMİYORSANIZ</b> alttaki "Kopyala" butonu ile imzayı
+                kopyalayın ve 5. adıma geçin.
+            </h4>
+
+            <iframe id="signature2" width="10px" height="10px" style="border: 0" allowfullscreen="" loading="lazy"
+                scrolling="no" onload="resizeIframe(this)"></iframe>
+            <div style="display: flex; align-items: center; gap: 20px;">
+                <button class="copy-button" id="copyButton2">Kopyala</button>
+
+                <span style="color: rgb(38, 241, 38); font-size: 18px;display: none;" id="copyButton2Message">Kopyalandı!</span>
+            </div>
+        </div>
+
+        <hr>
+
+        <h2>5. Adım: İmzanızı outlook mailinize ekleyin</h2>
+        <div>
+            <h4>Resimde seçili alana sağ tıklayın ve yapıştır seçeneği ile kopyaladığınız imzayı yapıştırın.</h4>
+            <img src="./settings-3.png" alt="" width="1000" />
+
+            <h4>Not: Eğer aşağıdaki gibi bir uyarıyla karşılaşırsanız "Yine de yapıştır" seçeneğiyle devam edin.</h4>
+            <img src="./settings-4.png" alt="" width="1000" />
+
+            <h4>İmzayı ekledikten sonra bu şekilde görünmesi gerekiyor. Eğer sorun yaşarsanız uygulama adımlarını
+                yeniden kontrol edin.</h4>
+            <img src="./settings-5.png" alt="" width="1000" />
+        </div>
+
+        <hr>
+
+        <h2>6. Adım: İmzayı kaydedin</h2>
+        <div>
+            <h4>Kaydet butonu ile imzanızı kaydedin ve 7. adıma geçin</h4>
+            <img src="./settings-6.png" alt="" width="1000" />
+        </div>
+
+        <hr>
+
+        <h2>7. Adım: İmza ayarlarını tamamlayın</h2>
+        <div>
+            <h4>
+                Resimdeki; "Yeni iletiler için" seçeneğinden isim verdiğiniz ("Adisyo İmza") imzanızı seçip "Kaydet"
+                butonu ile kaydedin ve ekranı kapatın.
+            </h4>
+            <img src="./settings-7.png" alt="" width="1000" />
+        </div>
+
+        <h2>İşte bu kadar! İmzanız başarıyla oluşturulmuştur. Kendi adresinize test maili göndererek deneyebilirsiniz.
+        </h2>
+    </div>
+</body>
+
+</html>
