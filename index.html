@@ -28,6 +28,7 @@
 
 <body style="background-color: #282731;color: white;font-family: Arial, Helvetica, sans-serif;">
     <script src="./script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.8/inputmask.min.js"></script>
 
     <div style="margin-left: 20px; margin-bottom: 100px;">
         <h2>1. Adım: Outlook adresine giriş yapın</h2>
@@ -57,13 +58,40 @@
 
         <hr>
 
-        <h2>4. Adım: İmza seçiminizi yapın</h2>
+        <h2>4. Adım: İmza bilgilerinizi doldurun</h2>
         <div>
-            <h4 style="margin-bottom: 15px;">
-                &nbsp;- Eğer imzanızda telefon numarası alanının görünmesini <b
-                    style="color: rgb(255, 104, 3);">İSTİYORSANIZ</b> alttaki "Kopyala" butonu ile imzayı
-                kopyalayın ve 5. adıma geçin.
+            <h4 style="margin-bottom: 45px;">
+                İmza bilgilerini doldurduktan sonra "Kopyala" butonu ile oluşan imzayı kopyalayıp bir sonraki adıma geçin.
             </h4>
+
+            <form id="userForm">
+                <fieldset style="border: 1px solid #a7a7a7; padding: 20px; border-radius: 5px;">
+                    <legend style="font-size: 18px; font-weight: bold;">Kullanıcı Bilgileri</legend>
+                    <div style="display: flex; flex-wrap: wrap; gap: 15px; margin: 20px 0;">
+                        <div style="display: flex; flex-direction: column; width: 300px;">
+                            <label for="name">Ad Soyad</label>
+                            <input id="name" name="name" type="text" placeholder="Ad Soyadınızı giriniz"
+                                style="margin-top: 10px; height: 30px; font-size: 16px; padding: 2px 10px;" required />
+                        </div>
+                        <div style="display: flex; flex-direction: column; width: 300px;">
+                            <label for="role">Görev Tanımı</label>
+                            <input id="role" name="role" type="text" placeholder="Görev tanımınızı giriniz"
+                                style="margin-top: 10px; height: 30px; font-size: 16px; padding: 2px 10px;" required />
+                        </div>
+                        <div style="display: flex; flex-direction: column; width: 300px;">
+                            <label for="email">Mail Adresi</label>
+                            <input id="email" name="email" type="email" placeholder="E-posta adresinizi giriniz"
+                                style="margin-top: 10px; height: 30px; font-size: 16px; padding: 2px 10px;" required />
+                        </div>
+                        <div style="display: flex; flex-direction: column; width: 300px;">
+                            <label for="phone">Telefon Numarası (zorunlu değil)</label>
+                            <input type="tel" id="phone" name="phone" pattern="\d{3} \d{3} \d{4}"
+                                placeholder="xxx xxx xxxx (başında sıfır olmadan)"
+                                style="margin-top: 10px; height: 30px; font-size: 16px; padding: 2px 10px;" />
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
 
             <iframe id="signature" width="10px" height="10px" style="border: 0" allowfullscreen="" loading="lazy"
                 scrolling="no" onload="resizeIframe(this)"></iframe>
@@ -73,23 +101,6 @@
 
                 <span style="color: rgb(38, 241, 38); font-size: 18px;display: none;"
                     id="copyButtonMessage">Kopyalandı!</span>
-            </div>
-
-            <hr style="max-width: 500px; margin-left: 0; margin-top: 25px;">
-
-            <h4 style="margin-bottom: 15px;">
-                &nbsp;- Eğer imzanızda telefon numarası alanının görünmesini <b
-                    style="color: rgb(255, 104, 3);">İSTEMİYORSANIZ</b> alttaki "Kopyala" butonu ile imzayı
-                kopyalayın ve 5. adıma geçin.
-            </h4>
-
-            <iframe id="signature2" width="10px" height="10px" style="border: 0" allowfullscreen="" loading="lazy"
-                scrolling="no" onload="resizeIframe(this)"></iframe>
-            <div style="display: flex; align-items: center; gap: 20px;">
-                <button class="copy-button" id="copyButton2">Kopyala</button>
-
-                <span style="color: rgb(38, 241, 38); font-size: 18px;display: none;"
-                    id="copyButton2Message">Kopyalandı!</span>
             </div>
         </div>
 
@@ -105,16 +116,6 @@
 
             <h4>
                 İmzayı ekledikten sonra bu şekilde görünmesi gerekiyor.
-                İmzanın üstünde yazılı olan alanları kendi bilgileriniz ile değiştirebilirsiniz.
-                <br />
-                <br />
-                "Oğuzhan Çamlıca" yazısına tıklayıp kendi isminizi yazın.
-                <br />
-                <br />
-                "Frontend Developer" yazısına tıklayıp kendi görevinizi yazın.
-                <br />
-                <br />
-                "Telefon numarası" alanına tıklayıp kendi numaranızı yazın.
             </h4>
             <img src="./settings-5.png" alt="" width="1000" />
         </div>
